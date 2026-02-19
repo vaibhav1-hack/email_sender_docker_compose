@@ -4,10 +4,12 @@ import smtplib
 from email.message import EmailMessage
 from typing import List, Dict, Any
 from dotenv import load_dotenv
+from typing import Optional
 load_dotenv()
 
 
-def _env(name: str, default: str | None = None) -> str:
+def _env(name: str, default: Optional[str] = None) -> str:
+
     val = os.environ.get(name, default)
     if not val:
         raise ValueError(f"Missing environment variable: {name}")
@@ -74,3 +76,4 @@ if __name__ == "__main__":
     recipients = [e.strip() for e in emails.replace("\n", ",").split(",") if e.strip()]
     out = send_bulk_emails(recipients, delay_seconds=int(os.environ.get("DELAY", "10")))
     print(out)
+
