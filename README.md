@@ -37,5 +37,4 @@ This project was built as a hands-on DevOps + deployment exercise and is **conta
 ├── requirements.txt        # Python dependencies
 ├── Dockerfile              # Container image build
 ├── .env                    # Environment variables (NOT committed)
-├── .dockerignore
 └── README.md
